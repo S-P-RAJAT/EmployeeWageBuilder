@@ -1,21 +1,26 @@
 package com.bridgelabz;
 
 public class EmployeeWageCalculator {
+	public static final int IS_PART_TIME = 1;
+	public static final int IS_FULL_TIME = 2;
+	public static final int EMP_RATE_PER_HOUR = 20;
+	
 	public static void main(String[] args) {
 		System.out.println("Welcome to Employee Wage Computation Program!");
-		int fullTime = 1;
-		int partTime = 2;
-		int wagePerHour = 20;
 		int empHours = 0;
 		int empWage = 0;
-		double empCheck = Math.floor(Math.random() * 10) % 3;
-		if (empCheck == fullTime)
+		int empCheck = (int)Math.floor(Math.random() * 10) % 3;
+		switch (empCheck) {
+		case IS_FULL_TIME:
 			empHours = 8;
-		else if (empCheck == partTime)
+			break;
+		case IS_PART_TIME:
 			empHours = 4;
-		else
-			empHours = 0;
-		empWage = empHours * wagePerHour;
+			break;
+		default:
+		empHours = 0;
+		}
+		empWage = empHours * EMP_RATE_PER_HOUR;
 		System.out.println("Emp Wage:" + empWage) ;
 	}
 }
