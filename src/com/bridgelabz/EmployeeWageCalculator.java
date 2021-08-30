@@ -7,8 +7,7 @@ public class EmployeeWageCalculator {
 	public static final int NUM_OF_WORKING_DAYS = 20;
 	public static final int MAX_HRS_IN_MONTH = 100;
 
-	public static void main(String[] args) {
-		System.out.println("Welcome to Employee Wage Computation Program!");
+	public static int computeEmpWage() {
 		int employeeHours = 0, totalEmployeeHours = 0, totalWorkingDays = 0;
 		while (totalEmployeeHours <= MAX_HRS_IN_MONTH && totalWorkingDays < NUM_OF_WORKING_DAYS) {
 			totalWorkingDays++;
@@ -27,6 +26,12 @@ public class EmployeeWageCalculator {
 			System.out.println("Day " + totalWorkingDays + " - Hours worked: " + employeeHours);
 		}
 		int totalEmployeeWage = totalEmployeeHours * EMP_RATE_PER_HOUR;
+		return totalEmployeeWage;
+	}
+
+	public static void main(String[] args) {
+		System.out.println("Welcome to Employee Wage Computation Program!");
+		int totalEmployeeWage = computeEmpWage();
 		System.out.println("Total Emp Wage: " + totalEmployeeWage);
 	}
 }
